@@ -1,0 +1,15 @@
+<p>Copyright © {{ now.Format "2006"}} {{ .Site.Title }}</p>
+<nav>
+    {{ range .Site.Menus.footer }}
+    <div>
+        <a href="{{ .URL }}">
+        {{ if .Pre }}
+        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+        {{ $icon }}
+        {{ end }}
+        {{ $text := print .Name | safeHTML }}
+        {{ $text }}
+        </a>
+    </div>
+        {{ end }}
+</nav>

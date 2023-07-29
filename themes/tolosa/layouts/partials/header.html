@@ -1,0 +1,21 @@
+<nav class="responsive-navbar">
+    <input type="checkbox" id="hamburger-menu" class="hamburger-menu">
+    <label for="hamburger-menu" id="hamburger-label" class="hamburger-label"><i data-feather="menu"></i></label>
+    <div>
+        <div>
+            <a href="/"><i data-feather="at-sign"></i>{{ .Site.Title }}</a>
+        </div>
+    {{ range .Site.Menus.main }}
+        <div class="foldable">
+            <a href="{{ .URL }}">
+            {{ if .Pre }}
+            {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+            {{ $icon }}
+            {{ end }}
+            {{ $text := print .Name | safeHTML }}
+            {{ $text }}
+            </a>
+        </div>
+    {{ end }}
+    </div>
+</nav>

@@ -1,0 +1,48 @@
+<div class="cards">
+
+{{ range . }}
+
+<div class="card">
+    <div>
+        <div class="card-img">
+            <a href="{{ .RelPermalink }}">
+            <img src="{{ .Params.img }}" style="width: 100%; height: 22vh; object-fit: cover">
+            </a>
+        </div>
+
+        <div class="card-content">
+            <h4 style="margin-top: 0.25em; margin-bottom: 0em"><a class="title" href="{{ .RelPermalink  }}">{{ .Title  }}</a></h4>
+        </div>
+
+        <div class="card-content">
+            <p style="margin-top: 0.em; margin-bottom: 0.5em; font-size: 15px">{{ .Params.short | safeHTML }}</p>
+        </div>
+    </div>
+
+    <div class="card-content">
+        <p style="margin-top: 0.em; margin-bottom: 0.5em; font-size: 15px; self-align: flex-end; text-align: left">
+
+        {{ $date := .PublishDate.Format "2006" }}
+
+        {{ with .Params.end }}
+            {{ $date }} - {{ . }}
+        {{ else }}
+            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2006" }}
+            <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+        {{ end }}
+
+
+        {{ with .Params.tags }}
+        {{ range . }}
+        {{ $href := print (absURL "tags/") (urlize .) }}
+        <a href="{{ $href }}"><button>{{ . }}</button></a>
+        {{ end }}
+        {{ end }}
+        </p>
+    </div>
+</div>
+
+{{ end }}
+
+</div>

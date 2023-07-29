@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="content">
+            <main aria-role="main">
+                {{- block "main" . }}{{- end }}
+            </main>
+        </div>
+        <footer>
+        {{- partial "footer.html" . -}}
+        </footer>
+        {{- partial "script.html" . -}}
+    </body>
+</html>
+

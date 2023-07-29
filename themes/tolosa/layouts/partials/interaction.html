@@ -1,0 +1,11 @@
+<div>
+    <ul style="padding-left: 0px; font-size: 15px">
+
+
+        <li class="invisible"><a href="{{ .Site.Params.gitrepo }}/issues"><i data-feather="message-circle"></i> Want to interact on the subject? Browse the issues or open one</a></li>
+        <li class="invisible"><a href="{{ .Site.Params.gitrepo }}/edit/content/{{ .File.Path }}"><i data-feather="edit"></i> You spotted a blunder? Open a pull request </a></li>
+        {{ range $name, $link := .Params.git }}
+        <li class="invisible"><a href="{{ $link }}"><i data-feather="git-branch"></i> Code - {{ $name }}</a></li>
+        {{end}}
+    </ul>
+</div>

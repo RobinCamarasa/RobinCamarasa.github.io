@@ -1,0 +1,413 @@
+/* body div */
+body {
+    background-color: #eedddd;
+    color: #400000;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* a div */
+a {
+    color: #990000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc5555;
+}
+
+
+/* nav div */
+nav {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: inherit;
+    text-decoration: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: solid 2px #990000;
+}
+
+nav > div {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+nav > div > div > a  {
+    font-size: 25px;
+    display: inline-flex;
+    align-items: center;
+}
+
+nav > div > div > a > svg {
+    margin-right: 0.2em;
+}
+
+
+/* footer div */
+footer {
+    margin-top: 1em;
+    border-top: dashed 1px #990000;
+}
+
+footer > p {
+    color: #990000;
+    display: flex;
+    justify-content: center;
+}
+
+footer > nav {
+    border-bottom: none;
+}
+
+footer > nav > div > a {
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer > nav > div > a > svg {
+    margin-right: 0.3em;
+}
+
+
+/* h1 div */
+h1 {
+    color: #990000;
+}
+
+h2 {
+    color: #990000;
+}
+
+main {
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* details div*/
+details {
+    float: left;
+    cursor: pointer;
+}
+
+details[open] {
+    float: none
+}
+
+details > summary {
+    padding-right: 1em;
+    color: #990000;
+}
+
+details > summary:hover {
+    padding-right: 1em;
+    color: #cc5555;
+}
+
+/* button */
+button {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    color: #990000;
+    border: none;
+    padding: 0.3em;
+    margin: 0.15em;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border: solid 2px #990000;
+}
+
+button:hover {
+    border: solid 2px #cc5555;
+    color: #cc5555;
+    
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* cards */
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: dotted 2px #990000;
+}
+
+.card-content {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+h4 .card-content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p .card-content {
+    font-size: 18px;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+
+code > span {
+    border: solid 2px #400000;
+    overflow:auto;
+    background-color: #400000;
+    cursor: pointer;
+}
+
+code > span > span {
+    color: #eedddd;
+}
+
+p > img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: solid 2px #990000;
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.blog-header > div {
+    width: 48%;
+}
+
+.blog-header > div > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: solid 2px #990000;
+}
+
+@media screen and (max-width: 850px) {
+
+    .banner {
+        width: 33%;
+    }
+
+    .description {
+        width: 60%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .blog-header {
+        flex-direction: column-reverse;
+    }
+
+    .blog-header > div {
+        width: 100%;
+    }
+
+    .card-content > p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        font-size: 25px;
+    }
+
+    main {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .banner {
+        width: 20%;
+    }
+
+    .description {
+        width: 60%;
+    }
+}
+
+
+@media screen and (min-width: 650px) and (max-width: 1300px) {
+    body {
+        font-size: 25px;
+    }
+    .banner {
+        width: 20%;
+    }
+
+
+    .description {
+        width: 70%;
+    }
+    .card {
+        width: 48%;
+    }
+
+}
+
+form {
+    background-color: #eedddd;
+    width: 100%;
+    height: 44px;
+    border-radius: 5px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    border: solid 2px #990000;
+    border-radius: 0px;
+}
+
+input {
+    all: unset;
+    font: 16px inherit;
+    color: #990000;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+::placeholder {
+    color: #990000;
+    opacity: 1;
+}
+
+li.invisible {
+    list-style: none;
+    list-style-position: inside;
+}
+
+p {
+    text-align: justify;
+}
+
+li {
+    list-style-image: url('/bullet.svg');
+}
+
+span {
+    color: #990000;
+}
+
+/* boostrap free since 93 */
+
+.responsive-navbar {
+    width: 100%;
+    color: #990000;
+}
+
+@media screen and (min-width: 1000px) {
+    .responsive-navbar > div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .responsive-navbar > div > div {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+
+    #hamburger-label {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .responsive-navbar {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #hamburger-label {
+        padding: 0.3em;
+        cursor: pointer;
+    }
+
+    #hamburger-menu ~ div > .foldable {
+        display: none;
+    }
+    #hamburger-menu:checked ~ div > .foldable {
+        display: block;
+        margin-top: 1em;
+    }
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+thead > tr { 
+    color: #990000;
+    border-top: solid 2px #990000;
+    border-bottom: solid 2px #990000;
+}
+
+tbody { 
+    color: #400000;
+    border-bottom: solid 2px #990000;
+}
+
+th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+
+td {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.meta {
+    font-size: 15px;
+}

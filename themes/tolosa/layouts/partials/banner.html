@@ -1,0 +1,24 @@
+<header class="homepage-header">
+{{ with $.Params.img }}
+<div class="banner">
+    <img src="{{ printf "%s" $.Params.img  }}" width="100%">
+</div>
+{{ end }}
+<div class="description">
+    <h1>{{ .Title }}</h1>
+{{ with $.Params.short }}
+    <p>``{{ $.Params.short | safeHTML }}''<p>
+{{ end }}
+
+    <div style="align-self: flex-end">
+    {{ range .Site.Menus.footer }}
+        <a href="{{ .URL }}">
+        {{ if .Pre }}
+        {{ $icon := printf "<i data-feather=\"%s\" style=\"margin-right: 20px;\"></i> " .Pre | safeHTML }}
+        {{ $icon }}
+        {{ end }}
+        </a>
+    {{ end }}
+    </div>
+</div>
+</header>

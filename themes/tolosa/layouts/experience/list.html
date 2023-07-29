@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{- partial "banner.html" . -}}
+
+
+<div style="overflow: hidden; margin-top: 2em; margin-bottom: 2em">
+    {{ range .Sections }}
+    <details>
+        <summary>{{ .Title }}</summary>
+        {{ partial "cards.html" .Pages.ByPublishDate.Reverse }}
+        {{ .Content }}
+    </details>
+    {{ end }}
+</div>
+{{ end }}

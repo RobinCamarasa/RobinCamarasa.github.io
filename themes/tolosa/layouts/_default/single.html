@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<div class="blog-header">
+    <div>
+        <h2>{{ .Title }}</h2>
+            <p>
+            Author: <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a>
+            </p>
+            {{ with .Params.contributors }}
+            <p class="meta">
+                Additional contributors {{ range . }} - <a href="https://github.com/{{ printf . }}">{{ printf . }}</a>{{ end }}
+            </p>
+            {{ end }}
+        <p>{{ print .Params.short }}</p>
+
+        {{ partial "interaction.html" . }}
+        <p class="meta">{{ partial "metadata.html" . }}</p>
+    </div>
+
+
+    <div>
+        {{ with .Params.img  }}
+        <img src="{{ print . }}" style="">
+        {{ end  }}
+    </div>
+
+
+</div>
+
+{{ .Content }}
+
+
+{{ end }}

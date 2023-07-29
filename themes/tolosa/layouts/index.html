@@ -1,0 +1,42 @@
+{{ define "main" }}
+      {{- partial "banner.html" . -}}
+
+      <div style="overflow: hidden; margin-top: 2em; margin-bottom: 2em">
+          <details>
+              <summary>Personal details</summary>
+              <ul>
+
+                  {{ range .Params.details }}
+                  <li class="invisible"><span><i data-feather="{{ index . 0 }}"></i></span> {{ index . 1 | safeHTML }}</li>
+                  {{ end }}
+              </ul>
+          </details>
+          <details>
+              <summary>Languages</summary>
+              <ul>
+                  {{ range .Params.languages }}
+                  <li><span>{{ index . 0}}:</span> {{ index . 1 }}</li>
+                  {{ end }}
+              </ul>
+          </details>
+          <details>
+              <summary>Hobbies</summary>
+              <ul>
+                  {{ range .Params.hobbies }}
+                  <li>{{ . }}</li>
+                  {{ end }}
+              </ul>
+          </details>
+      </div>
+      <!--TODO https://codepen.io/Dimmi/pen/dpEKpP -->
+
+      <div>
+          For more information: <a href="{{ $.Params.cv }}" download><button style="margin-left: 0.5em"><i style="margin-right: 0.3em" data-feather="download"></i> Curriculum Vitae</button></a>
+
+      </div>
+
+      <div class="homepage-content">
+        {{.Content}}
+      </div>
+
+{{ end }}

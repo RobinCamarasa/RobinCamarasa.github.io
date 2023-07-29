@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{- partial "banner.html" . -}}
+
+  {{ partial "cards.html" .Pages.ByPublishDate.Reverse }}
+
+  <div class="homepage-content">
+    {{.Content}}
+  </div>
+{{ end }}
