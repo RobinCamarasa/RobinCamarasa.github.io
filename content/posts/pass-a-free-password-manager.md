@@ -90,6 +90,4 @@ rm ~/key.asc
 ## Additional notes
 
 - [pass](https://www.passwordstore.org/) also offers migration plans if you already have a password manager. (Check those migration plans on [pass website](https://www.passwordstore.org/))
-- The community has implemented many compatible clients for all kinds of use cases (A list of those clients is available on the [pass website](https://www
-
-.passwordstore.org/))
+- The community has implemented many compatible clients for all kinds of use cases (A list of those clients is available on the [pass website](https://www.passwordstore.org/))
