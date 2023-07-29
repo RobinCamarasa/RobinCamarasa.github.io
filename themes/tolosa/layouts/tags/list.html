@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{- partial "banner.html" . -}}
+  {{ if (eq .Title "Tags") }}
+      {{- partial "tags.html" . -}}
+  {{ else }}
+      {{- partial "cards.html" .Pages.ByPublishDate.Reverse -}}
+  {{ end }}
+  <div class="homepage-content">
+    {{.Content}}
+  </div>
+{{ end }}
