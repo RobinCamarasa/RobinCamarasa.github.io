@@ -1,0 +1,51 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'RobinCamarasa'
+theme = 'tolosa'
+
+[params]
+    gitrepo = 'https://github.com/RobinCamarasa/RobinCamarasaWebsite'
+    author = 'RobinCamarasa'
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    pre = "pen-tool"
+    url = "/posts/"
+    weight = 4
+  [[menu.main]]
+    name = "Tags"
+    pre = "tag"
+    url = "/tags/"
+    weight = 5
+  [[menu.main]]
+    name = "Experience"
+    pre = "briefcase"
+    url = "/experience/"
+    weight = 2
+
+  [[menu.footer]]
+    name = "Gitlab"
+    pre = "gitlab"
+    url = "https://gitlab.com/RobinCamarasa"
+    weight = 2
+  [[menu.footer]]
+    name = "Github"
+    pre = "github"
+    url = "https://github.com/RobinCamarasa"
+    weight = 3
+  [[menu.footer]]
+    name = "Linked In"
+    pre = "linkedin"
+    url = "https://www.linkedin.com/in/robin-camarasa-893726158"
+    weight = 4
+  [[menu.footer]]
+    name = "Mail"
+    pre = "mail"
+    url = "mailto:robin.camarasa@pm.me"
+    weight = 1
+  [[menu.footer]]
+    name = "RSS"
+    pre = "rss"
+    url = "/posts/index.xml"
+    weight = 5
