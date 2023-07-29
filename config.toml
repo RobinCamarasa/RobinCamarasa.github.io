@@ -1,10 +1,11 @@
 baseURL = 'http://robincamarasa.github.io/'
+publishDir = 'public'
 languageCode = 'en-us'
 title = 'RobinCamarasa'
 theme = 'tolosa'
 
 [params]
-    gitrepo = 'https://github.com/RobinCamarasa/RobinCamarasaWebsite'
+    gitrepo = 'https://github.com/RobinCamarasa/RobinCamarasa.github.io'
     author = 'RobinCamarasa'
 
 [menu]
