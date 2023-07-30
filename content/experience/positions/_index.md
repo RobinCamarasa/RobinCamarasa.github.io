@@ -1,5 +1,5 @@
 ---
-title: "Experiences"
+title: "Positions"
 draft: false
 img: /experience.svg
 weight: 3
