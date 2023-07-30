@@ -362,7 +362,7 @@ span {
     }
 
     #hamburger-label {
-        padding: 0.3em;
+        margin-top: 10px;
         cursor: pointer;
     }
 
