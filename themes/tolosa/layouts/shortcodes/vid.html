@@ -1,0 +1,5 @@
+<video controls width="100%"> 
+    <source src="{{ .Get "link" }}" type="video/mp4">
+    <source src="{{ .Get "link" }}" type="video/webm"> Your browser does not support the video tag.
+    {{ .Inner }}
+</video>
