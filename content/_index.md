@@ -20,5 +20,3 @@ hobbies: [
     "3D printing",
 ]
 ---
-
-# THIS WEBSITE IS IN CONSTRUCTION
