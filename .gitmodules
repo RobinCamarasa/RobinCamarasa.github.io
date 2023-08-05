@@ -1,0 +1,3 @@
+[submodule "submodules/curricullum-vitae"]
+	path = submodules/curricullum-vitae
+	url = git@gitlab.com:robin-camarasa-personal/documents/curricullum-vitae.git
