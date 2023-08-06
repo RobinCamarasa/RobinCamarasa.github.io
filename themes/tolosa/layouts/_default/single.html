@@ -11,7 +11,7 @@
                 Additional contributors {{ range . }} - <a href="https://github.com/{{ printf . }}">{{ printf . }}</a>{{ end }}
             </p>
             {{ end }}
-        <p>{{ print .Params.short }}</p>
+        <p>{{ print .Params.short | safeHTML }}</p>
 
         {{ partial "interaction.html" . }}
         <p class="meta">{{ partial "metadata.html" . }}</p>
