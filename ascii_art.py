@@ -12,9 +12,11 @@ from skimage.transform import resize
 CHARACTERS = [" ", " ", " ", ".", ",", ":", "i", "l", "w", "W"]
 
 
-def main(args):
+def main(args: argparse.Namespace):
     image: np.ndarray = img.imread(args.input_file)
     grey_scale_image: np.ndarray = np.transpose(image.mean(-1))
+    if args.invert:
+        grey_scale_image: np.ndarray = 1 - grey_scale_image
     grey_scale_image = (
         (len(CHARACTERS) - 1)
         * (grey_scale_image - grey_scale_image.min())
@@ -60,5 +62,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output-file", type=Path, help="Path to the output image file"
     )
-    args: argparse.Namespace = parser.parse_args()
-    main(args)
+    parser.add_argument(
+        "--invert", help="Whether to invert or not", action="store_true"
+    )
+    main(parser.parse_args())
