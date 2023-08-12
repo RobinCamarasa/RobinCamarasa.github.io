@@ -1,5 +1,5 @@
 {{ range (sort .Pages.ByTitle) }}
 
-    <button><a id="{{ .Title }}" class="title" href="{{ .RelPermalink  }}">{{ .Title  }}</a></button>
+    <a id="{{ .Title }}" class="title" href="{{ .RelPermalink  }}"><button>{{ .Title  }}</button></a>
 
 {{ end }}
