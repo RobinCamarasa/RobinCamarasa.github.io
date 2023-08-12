@@ -1,6 +1,6 @@
-<iframe src="{{.Get "link"}}" width="100%" style="aspect-ratio: 1.41; margin-top: 1em">
+<object data="{{.Get "link"}}" type="application/pdf" width="100%" style="aspect-ratio: 1.41; margin-top: 1em">
       <p>Your web browser doesn't have a PDF plugin.
       Instead you can <a href="{{.Get "link"}}">click here to
               download the PDF file.</a></p>
-</iframe>
+</object>
 {{ .Inner }}
