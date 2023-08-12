@@ -9,5 +9,5 @@ short: 3-month internship. Participation to two international medical imaging ch
 
 **A short report (due to my school requirements), about the topic of my internship: Applying Gated Recurrent Units to medical imaging segmentation.**
 
-{{< rawpdf link="/emc.pdf" />}}
+{{< rawpdf link="/emc.pdf" title="Report"/>}}
 
