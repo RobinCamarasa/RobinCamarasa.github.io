@@ -7,3 +7,7 @@ img: /python.png
 tags: ['teaching', 'TU Delft', 'python']
 short: Teaching python to 60 master students. Creation of practicals, exams, and course resources. Correction of exams.
 ---
+
+**You can find below an example of assignment I wrote for the course.**
+
+{{< rawpdf link="/football-tournament.pdf" title="Report"/>}}
