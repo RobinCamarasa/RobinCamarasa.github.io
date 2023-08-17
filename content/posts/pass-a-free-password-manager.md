@@ -2,7 +2,7 @@
 title: "A Free Password Manager"
 date: 2022-09-03T08:22:00+02:00
 draft: false
-short: How I Learned to Stop Worrying and Love Pass
+short: How I Learned to Stop Worrying and Love <a href="https://www.passwordstore.org/">pass</a>
 tags: [cli, linux, security]
 img: /lock.png
 ---
