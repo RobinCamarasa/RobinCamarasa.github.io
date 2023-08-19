@@ -3,7 +3,7 @@ title: "Apple reconstruction"
 date: 2016-09-01
 draft: false
 img: /pid.png
-tags: ['python', 'physics']
+tags: ['python', 'matlab', 'physics']
 short: A 3 months (part-time) bachelor physics project of 3D object reconstruction after 2D scanning.
 ---
 
