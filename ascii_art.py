@@ -13,6 +13,10 @@ CHARACTERS = [" ", " ", " ", ".", ",", ":", "i", "l", "w", "W"]
 
 
 def main(args: argparse.Namespace):
+    """Generate the ascii art
+
+    :param args: CLI user input
+    """
     image: np.ndarray = img.imread(args.input_file)
     grey_scale_image: np.ndarray = np.transpose(image.mean(-1))
     if args.invert:
@@ -26,10 +30,7 @@ def main(args: argparse.Namespace):
         160,
         grey_scale_image.shape[1] * 80 / grey_scale_image.shape[0],
     )
-    down_sampled_grey_scale_image: np.ndarray = resize(
-        grey_scale_image,
-        (x, y),
-    )
+    down_sampled_grey_scale_image: np.ndarray = resize(grey_scale_image, (x, y))
     string = "\n".join(
         [
             "".join(
@@ -42,16 +43,7 @@ def main(args: argparse.Namespace):
         ]
     )
     plt.figure(figsize=(x / 11.1, y / 7.1))
-    plt.text(
-        0.5,
-        0.5,
-        string,
-        family="monospace",
-        ha="center",
-        va="center",
-        fontsize=10,
-        color="#990000",
-    )
+    plt.text(0.5, 0.5, string, family="monospace", ha="center", va="center", fontsize=10, color="#990000")
     plt.axis("off")
     plt.savefig(args.output_file, transparent=True)
 
