@@ -201,6 +201,12 @@ p > img {
     border: solid 2px #990000;
 }
 
+@media screen and (max-width: 1000px) {
+    p > img {
+        width: 100%;
+    }
+}
+
 .blog-header {
     display: flex;
     flex-direction: row;
