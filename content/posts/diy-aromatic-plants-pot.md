@@ -12,11 +12,11 @@ So put-on your indoor gardening boots (whatever that means), and follow the guid
 
 ## Why doing an aromatic garden?
 
-I am french, and obviously ---as the cliché are always based on something--- I like to cook.
-A big problem though is that I the aromatic herbs of my [local super-market](https://www.ah.nl/) horrible: the thyme is barely dried, the basil molds in a couple days...
+I am french, and obviously ---as clichés are always based on something--- I like to cook.
+A big problem though is that the aromatic herbs of my [local super-market](https://www.ah.nl/) horrible: the thyme is barely dried, the basil molds in a couple days...
 It frustrates me that my cooking suffers from such stupid considerations.
 
-Another problem is that I like to have plant in my apartment but I suck at gardening.
+Another problem is that I like to have plants in my apartment but I suck at gardening.
 So I usually buy plants and kill them either by watering it too much or too little (RIP Phillipe the [philodendron hederaceum](https://en.wikipedia.org/wiki/Philodendron_hederaceum)). 
 Then, I come back to square 1, namely an apartment without plant.
 My hope is that given that aromatic herbs grow fast and are meant to be eaten quickly it will be easier to grow than normal plant. 
