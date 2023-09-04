@@ -21,7 +21,7 @@ Currently I have a B1/B2 level, but have a lot of difficulty to go to the next l
 I think that putting on the internet this blog will make me accountable, and force me to work my dutch for the exam.
 
 Furthermore, I really want to be part of the dutch society and as a bit more than an expat.
-If your live in the Netherlands, you always hear: "You really don't need to learn Dutch in the Netherlands, everybody speak English."
+If you live in the Netherlands, you always hear: "You really don't need to learn Dutch in the Netherlands, everybody speak English."
 Well, yes but no... If you plan to stay a couple of years: Sure!
 But if you aim to stay, it is crazy not to learn dutch.
 You will always feel a bit left aside and not have the full experience.
