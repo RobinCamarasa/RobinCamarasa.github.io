@@ -4,7 +4,7 @@ date: 2023-09-03T12:18:31+02:00
 img: /dutch-administration.png
 short: <strong>Part 1:</strong> First things first
 tags: ["dutch"]
-draft: false
+draft: true
 ---
 
 In this serie of posts, I will document my journey toward getting the highest dutch highschool level degree: [the VWO diploma](https://duo.nl/particulier/vakinformatie-voor-het-staatsexamen/vwo.jsp).
