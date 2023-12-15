@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel=stylesheet><link rel="shortcut icon" type=image/x-icon href=/me_small.svg><link rel=stylesheet href=/css/style.css><title>RobinCamarasa | Git worktree for AI research</title></head><body><nav class=responsive-navbar><input type=checkbox id=hamburger-menu class=hamburger-menu>
+<label for=hamburger-menu id=hamburger-label class=hamburger-label><i data-feather=menu></i></label><div><div><a href=/><i data-feather=at-sign></i>RobinCamarasa</a></div><div class=foldable><a href=/experience/><i data-feather=briefcase></i>
+Experience</a></div><div class=foldable><a href=/posts/><i data-feather=pen-tool></i>
+Posts</a></div><div class=foldable><a href=/tags/><i data-feather=tag></i>
+Tags</a></div></div></nav><div id=content><main aria-role=main><div class=blog-header><div><h2>Git worktree for AI research</h2><p>Author: <a href=http://robincamarasa.github.io/>RobinCamarasa</a></p><p>Let's go out of the wood!</p><div><ul style=padding-left:0;font-size:15px><li class=invisible><a href=https://github.com/RobinCamarasa/RobinCamarasa.github.io/issues><i data-feather=message-circle></i> Want to interact on the subject? Browse the issues or open one</a></li><li class=invisible><a href=https://github.com/RobinCamarasa/RobinCamarasa.github.io/edit/master/content/posts/git-worktree.md><i data-feather=edit></i> You spotted a blunder? Open a pull request</a></li></ul></div><p class=meta><time datetime=2023-12-13>2023</time>
+<a href=http://robincamarasa.github.io/tags/cli><button>cli</button></a>
+<a href=http://robincamarasa.github.io/tags/bash><button>bash</button></a></p></div><div><img src=/git-worktree.png></div></div><p>Today, a short blog post to share my excitement about a <a href=https://git-scm.com/docs/git-worktree>git</a> feature that I recently discovered : <a href=https://git-scm.com/docs/git-worktree>git-worktree</a>.
+I&rsquo;d like to tank the <a href=https://github.com/ThePrimeagen>@Primagen</a> for sharing it!</p><p><em>NB: This article suppose that your are familiar with git and will not explain terms such as checkout, push, pull&mldr; Also this is not a tutorial on how to use <code>git-worktree</code>.</em></p><h2 id=what-is-git-worktree>What is <code>git-worktree</code>?</h2><p>I like to think of <code>git-worktree</code> as <strong>synchronised</strong> local git repositories.
+The important word here (as you might guess) is <strong>synchronised</strong>.
+It means that you can have different directories in your file system that are pointing to different nodes of the same git history as follow:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>.
+</span></span><span style=display:flex><span>├── dir <span style=color:#ae81ff>1</span> -&gt; branch <span style=color:#e6db74>`</span>dev<span style=color:#e6db74>`</span> commit ae12kd8
+</span></span><span style=display:flex><span>├── dir <span style=color:#ae81ff>2</span> -&gt; branch <span style=color:#e6db74>`</span>main<span style=color:#e6db74>`</span> commit ae12kd8
+</span></span><span style=display:flex><span>└── dir <span style=color:#ae81ff>3</span> -&gt; branch <span style=color:#e6db74>`</span>feat/foo<span style=color:#e6db74>`</span> commit bfec521
+</span></span></code></pre></div><p>Magic? At least for my use case!</p><p><em>To better understand that magic, I let you check the documentation: <a href=https://git-scm.com/docs/git-worktree>git-worktree</a></em></p><h2 id=why-are-they-suited-to-ai-research-code>Why are they suited to AI research code?</h2><p>The aims of a software and research code are different.
+A software aims to be used by someone else than its developer, and therefore needs to work out of the box, and be intuitive.
+A research code aims to prove a point, and his rarely used by other people than its developer; in industry terms it is close to a proof of concept.
+It is generally developed through tries and errors as illustrated in the fictive git tree below.
+Therefore, quick implementation of ideas and quick experimentation is essential to the development of research code.
+In practice, that translates by the creation of many feature branches which might be abandoned as quickly as they were created.</p><p><img src=/ai-git.png alt style=width:100%;max-width:300px>
+In addition, AI have an extra particularity: a (very) long execution time.
+Many side effects might happens during the execution of your code (calling subprocesses from different files, moving files around etc.).
+Then, <code>stashing</code> and <code>checking out</code> your repository during the execution of the code is a risky business&mldr;
+Risky business that might kill hours of computation.
+Not really good for the planet, or your sanity!</p><p>Using <code>git-worktree</code> allows you to work on as many features as you want without disturbing the structure of the directory of the code your running.
+Great, right?
+(Am I the only one excited about this?)</p><p><em>Side note about of AI script running time: when I administrated the cluster of GPU of my lab, we fixed the time-out of the longest queue to 1 months. (And we still had complains that it was too short&mldr;).</em></p><h2 id=how-do-i-use-it>How do I use it</h2><p>Let&rsquo;s say that the training of my latest AI project does not work (as often&mldr;).
+I have a meeting with my supervisor and we come up with n new idea to test: (idea-1, &mldr;, idea-n).
+From those ideas only a few (at best) will make it to the code that ends up in the research paper.</p><p>In my repository, this will translate by the creation of n feature branches (<code>feat/idea-1</code>, &mldr;, <code>feat/idea-n</code>).
+And this is where <code>git-worktree</code> enters the scene</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>path<span style=color:#f92672>]</span>/dev$ git worktree add -b feat/idea-i ../idea-i
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>path<span style=color:#f92672>]</span>/dev$ cd ../idea-i
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>path<span style=color:#f92672>]</span>/idea-i$ git push -u origin feat/idea-i
+</span></span></code></pre></div><p>After I did that, for all feature branches I have a separate directory:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>.
+</span></span><span style=display:flex><span>├── results
+</span></span><span style=display:flex><span>├── dev
+</span></span><span style=display:flex><span>└── idea-1
+</span></span><span style=display:flex><span>.
+</span></span><span style=display:flex><span>.
+</span></span><span style=display:flex><span>.
+</span></span><span style=display:flex><span>└── idea-n
+</span></span></code></pre></div><p>and I can nicely work on each of my features separately.
+Once a feature is ready (which can be very quick) I can validate or invalidate the idea by running the training of the AI (e.g. <code>PYTHONPATH=idea-1 python run.py</code>).
+The unsuccessful <code>git-worktree</code> are removed, and I can <code>merge</code> or <code>cherry-pick</code> some commits from the successful ones.</p><h2 id=conclusion>Conclusion</h2><p><code>git-worktree</code> simplified the administration of my research projects.
+It also allowed me to fearlessly try all my (or my supervisor&rsquo;s) most exotic ideas.</p><h2 id=possible-improvements>Possible improvement(s)</h2><ul><li>So far, the creation of feature branches is quite manual. I could wrap it in a shell script</li><li>It would be nice to integrate this better in my <a href=https://www.vim.org/>vim</a> workflow. The <a href=https://github.com/ThePrimeagen>@Primagen</a> (him again) released <a href>git-worktree.nvim</a> but I did not try it yet.</li></ul></main></div><footer><p>Copyright © 2023 RobinCamarasa</p><nav><div><a href=mailto:robin.camarasa@pm.me><i data-feather=mail></i>
+Mail</a></div><div><a href=https://gitlab.com/RobinCamarasa><i data-feather=gitlab></i>
+Gitlab</a></div><div><a href=https://github.com/RobinCamarasa><i data-feather=github></i>
+Github</a></div><div><a href=https://www.linkedin.com/in/robin-camarasa-893726158><i data-feather=linkedin></i>
+Linked In</a></div><div><a href=/posts/index.xml><i data-feather=rss></i>
+RSS</a></div></nav></footer><script src=https://unpkg.com/feather-icons></script>
+<script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script>
+<script>feather.replace()</script></body></html>
