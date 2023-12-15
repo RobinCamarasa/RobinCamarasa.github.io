@@ -6,7 +6,7 @@ theme = 'tolosa'
 
 [params]
     gitrepo = 'https://github.com/RobinCamarasa/RobinCamarasa.github.io'
-    author = 'RobinCamarasa'
+    writer = 'RobinCamarasa'
 
 [menu]
   [[menu.main]]
