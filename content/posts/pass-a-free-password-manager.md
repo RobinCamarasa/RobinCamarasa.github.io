@@ -7,7 +7,7 @@ tags: [cli, linux, security]
 img: /lock.png
 ---
 
-For all those years, my friends and colleagues used to make fun of people's digital security: "People are stupid. They use 12345678 as their main password." I was smiling and nodding, but deep down, I knew that having a [pawned mail address](https://haveibeenpwned.com/) and the same weak password on dozens of websites would not make me a poster boy for personal data security. I felt guilty about it, but I never really had the motivation to dive into it. However, one day, a colleague gave me the push I needed. We were at the coffee machine, and he explained to me that the Dutch government might create a law that makes employees responsible for the safety of their passwords. Losing my personal data really sucked, but losing my job and potentially being sued was too much of a risk. I had to do something and find a decent password manager!
+For many years, my friends and colleagues used to make fun of people's digital security: "People are stupid. They use 12345678 as their main password." I was smiling and nodding, but deep down, I knew that having a [pawned mail address](https://haveibeenpwned.com/) and the same weak password on dozens of websites would not make me a poster boy for personal data security. I felt guilty about it, but I never really had the motivation to dive into it. However, one day, a colleague gave me the push I needed. We were at the coffee machine, and he explained to me that the Dutch government might create a law that makes employees responsible for the safety of their passwords. Losing my personal data really sucked, but losing my job and potentially being sued was too much of a risk. I had to do something and find a decent password manager!
 
 ## Wish list
 
